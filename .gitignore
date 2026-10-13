@@ -1,0 +1,90 @@
+# ============================================================
+#  个人作品集仓库 - Git 忽略清单
+#  作用：告诉 Git「这些文件不要上传」，保持仓库干净
+#  以 # 开头的行是注释；末尾是空行或通配符写法的示例
+# ============================================================
+
+# ---------- 1. 操作系统自动生成的垃圾文件 ----------
+# Windows 缩略图缓存
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+# macOS 的宗卷信息文件
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# ---------- 2. 编辑器 / IDE 的私人配置 ----------
+# VS Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+# JetBrains 全家桶（PyCharm / IDEA / CLion）
+.idea/
+*.iml
+*.iws
+# Python 虚拟环境（放在仓库里既臃肿又不可跨设备使用）
+.venv/
+venv/
+env/
+ENV/
+# Jupyter Notebook 的检查点
+.ipynb_checkpoints/
+
+# ---------- 3. 编译产物与缓存 ----------
+__pycache__/
+*.py[cod]
+*.so
+*.class
+*.o
+*.obj
+*.exe
+*.dll
+# C / C++ 的构建目录
+build/
+dist/
+cmake-build-*/
+*.stackdump
+# Java / Maven / Gradle
+target/
+.gradle/
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+# 前端构建输出
+.next/
+out/
+
+# ---------- 4. 运行时数据与日志 ----------
+*.log
+logs/
+*.tmp
+*.temp
+*.bak
+*.swp
+*~
+
+# ---------- 5. 密钥与隐私（重要！） ----------
+# 这些东西一旦推上 GitHub 就是公开的，绝对不能提交
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+id_rsa*
+secrets.json
+config.local.*
+
+# ---------- 6. 大文件（GitHub 单个文件 > 100MB 会被拒绝） ----------
+*.zip
+*.rar
+*.7z
+*.tar.gz
+*.mp4
+*.psd
+# 注意：实验报告 PDF / PPT 一般不大，可以正常提交，
+# 所以这里没有一刀切地忽略 *.pdf 和 *.pptx
